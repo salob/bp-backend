@@ -1,0 +1,9 @@
+FROM mcr.microsoft.com/devcontainers/java:17
+
+# Install Groovy via SDKMAN
+RUN bash -c "source /usr/local/sdkman/bin/sdkman-init.sh && sdk install groovy"
+
+# Optional: Install Spring Boot CLI (uses Groovy under the hood)
+RUN bash -c "source /usr/local/sdkman/bin/sdkman-init.sh && sdk install springboot"
+
+WORKDIR /workspace

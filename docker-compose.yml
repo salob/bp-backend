@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:7
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  frontend:
+    image: salob79/bp-frontend:latest
+    container_name: bp-frontend
+    ports:
+      - "8080:80"
+
+volumes:
+  mongo-data:
