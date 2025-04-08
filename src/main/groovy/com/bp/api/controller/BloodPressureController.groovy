@@ -4,8 +4,10 @@ import com.bp.api.model.BloodPressureRequest
 import org.springframework.web.bind.annotation.*
 import org.springframework.http.ResponseEntity
 
+@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "http://localhost:8080")
 @RestController
-@CrossOrigin
+//@CrossOrigin
 class BloodPressureController {
 
     @PostMapping("/getbpcategory")
