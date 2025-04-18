@@ -67,7 +67,7 @@ jobs:
         with:
           projectBaseDir: .
           args: >
-            -Dsonar.projectKey=bp-backend
+            -Dsonar.projectKey=salob_bp-backend
             -Dsonar.organization=salob
             -Dsonar.projectName=bp-backend
             -Dsonar.coverage.jacoco.xmlReportPaths=build/reports/jacoco/test/jacocoTestReport.xml
