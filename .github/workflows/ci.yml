@@ -2,10 +2,9 @@ name: ci
 
 on:
   push:
-    branches: [ main ]
-  
-jobs:
+    branches: [main]
 
+jobs:
   smoketest:
     uses: ./.github/workflows/smoketest.yml
 
