@@ -11,6 +11,8 @@ jobs:
   build-and-test:
     name: Build, Test, and Dockerize Spring Boot
     runs-on: ubuntu-latest
+    needs:
+      - smoketest
 
     env:
       IMAGE_NAME: salob79/bp-backend
