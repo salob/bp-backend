@@ -48,7 +48,10 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
+      
+      - name: Build and run tests
+        run: ./gradlew clean bootJar
+    
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
