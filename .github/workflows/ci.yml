@@ -13,10 +13,6 @@ jobs:
     needs:
       - smoketest
 
-    env:
-      IMAGE_NAME: salob79/bp-backend
-      IMAGE_TAG: latest
-
     services:
       mongo:
         image: mongo:5.0
@@ -73,6 +69,9 @@ jobs:
     needs:
       - smoketest
       - build-and-test
+    env:
+      IMAGE_NAME: salob79/bp-backend
+      IMAGE_TAG: latest     
 
     steps:
       - name: Checkout source
