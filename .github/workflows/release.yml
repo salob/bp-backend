@@ -20,6 +20,9 @@ jobs:
         with:
           fetch-depth: 0  # Needed to push tags
 
+      - name: Build clean jar
+        run: ./gradlew clean bootJar
+
       - name: Set version variable
         id: vars
         run: |
