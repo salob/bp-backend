@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity
 
 @CrossOrigin(origins = ["http://localhost:8080", "http://localhost:5173"])
 @RestController
-//@CrossOrigin
+@RequestMapping("/api")
 class BloodPressureController {
 
     @PostMapping("/getbpcategory")
