@@ -27,7 +27,12 @@ jobs:
 
     steps:
       - name: Checkout source
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          repository: sianob/bp-backend
+          ref: ${{ github.head_ref || github.ref_name }}
+          token: ${{ secrets.GH_PAT }} # Needed to access private repos
+
 
       - name: Set up JDK 17
         uses: actions/setup-java@v3
