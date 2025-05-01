@@ -73,7 +73,7 @@ jobs:
       - name: Upload test coverage report
         uses: actions/upload-artifact@v4
         with:
-          name: test-coverage-report
+          name: backend-test-coverage-report
           path: build/reports/jacoco/test/html
 
       - name: SonarQube Scan
@@ -160,6 +160,16 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Create GitHub Release
+        run: |
+          echo "Creating release ${{ env.VERSION }} in sianob/bp-frontend..."
+          gh release create "${{ env.VERSION }}" \
+            --repo "sianob/bp-frontend" \
+            --title "${{ env.VERSION }}" \
+            --generate-notes
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
 
       - name: Push Docker Image
         uses: docker/build-push-action@v5
